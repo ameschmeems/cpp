@@ -5,59 +5,69 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 16:17:41 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/12 17:10:00 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/03/12 18:53:04 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/03/12 19:06:35 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-std::string Contact::get_first_name(void) const
+Contact::Contact(void)
 {
-	return (this->_first_name);
+	return ;
 }
 
-std::string Contact::get_last_name(void) const
+Contact::~Contact(void)
 {
-	return (this->_last_name);
+	return ;
 }
 
-std::string Contact::get_nickname(void) const
+void Contact::set_fname(std::string str)
 {
-	return (this->_nickname);
+	this->_fname = str;
 }
 
-std::string Contact::get_phone_number(void) const
+void Contact::set_lname(std::string str)
 {
-	return (this->_phone_number);
+	this->_lname = str;
 }
 
-std::string Contact::get_darkest_secret(void) const
+void Contact::set_nname(std::string str)
 {
-	return (this->_darkest_secret);
+	this->_nname = str;
 }
 
-void Contact::set_first_name(std::string str)
+void Contact::set_number(std::string str)
 {
-	this->_first_name = str;
+	this->_number = str;
 }
 
-void Contact::set_last_name(std::string str)
+void Contact::set_number(std::string str)
 {
-	this->_last_name = str;
+	this->_secret = str;
 }
 
-void Contact::set_nickname(std::string str)
+std::string Contact::get_fname(void) const
 {
-	this->_nickname = str;
+	return (this->_fname);
 }
 
-void Contact::set_phone_number(std::string str)
+std::string Contact::get_lname(void) const
 {
-	this->_phone_number = str;
+	return (this->_lname);
 }
 
-void Contact::set_darkest_secret(std::string str)
+std::string Contact::get_nname(void) const
 {
-	this->_darkest_secret = str;
+	return (this->_nname);
+}
+
+std::string Contact::get_number(void) const
+{
+	return (this->_number);
+}
+
+std::string Contact::get_secret(void) const
+{
+	return (this->_secret);
 }
