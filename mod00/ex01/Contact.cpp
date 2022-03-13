@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 18:53:04 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/12 19:06:35 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/03/13 18:47:23 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/03/13 18:47:23 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,37 @@
 
 Contact::Contact(void)
 {
-	return ;
+    return ;
 }
 
 Contact::~Contact(void)
 {
-	return ;
+    return ;
 }
 
 void Contact::set_fname(std::string str)
 {
-	this->_fname = str;
+    this->_fname = str;
 }
 
 void Contact::set_lname(std::string str)
 {
-	this->_lname = str;
+    this->_lname = str;
 }
 
 void Contact::set_nname(std::string str)
 {
-	this->_nname = str;
+    this->_nname = str;
 }
 
 void Contact::set_number(std::string str)
 {
-	this->_number = str;
+    this->_number = str;
 }
 
-void Contact::set_number(std::string str)
+void Contact::set_secret(std::string str)
 {
-	this->_secret = str;
+    this->_secret = str;
 }
 
 std::string Contact::get_fname(void) const

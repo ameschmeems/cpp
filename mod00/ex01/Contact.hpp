@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 18:53:07 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/12 19:01:01 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/03/13 18:47:30 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/03/13 18:47:30 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Contact
 {
 public:
+
 	Contact(void);
 	~Contact(void);
 
@@ -34,6 +35,7 @@ public:
 	std::string get_secret(void) const;
 
 private:
+
 	std::string _fname;
 	std::string _lname;
 	std::string _nname;
