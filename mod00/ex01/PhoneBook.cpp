@@ -28,6 +28,8 @@ void PhoneBook::add(void)
     std::string str;
 
     this->_amount++;
+    if (this->_amount == 16)
+        this->_amount = 8;
     int i = this->_amount % 8;
     do
     {
@@ -63,5 +65,32 @@ void PhoneBook::add(void)
 
 void PhoneBook::search(void) const
 {
-    return ;
+    int amount;
+    std::string str;
+
+    if (this->_amount < 0)
+        return ;
+    if (this->_amount < 8)
+        amount = this->_amount;
+    else
+        amount = 7;
+    for (int i = 0; i <= amount; i++)
+    {
+        std::cout << "         " << i << "|";
+        str = this->_contacts[i].get_fname();
+        if (str.length() <= 10)
+        {
+            for (int j = 0; j < 10 - str.length(); j++)
+                std::cout << " ";
+        }
+        else
+        {
+            for (int j = 0; j < 9; j++)
+                std::cout << str[j];
+            std::cout << ".";
+        }
+        std::cout << str << "|";
+        std::cout << std::endl;
+    }
+
 }
