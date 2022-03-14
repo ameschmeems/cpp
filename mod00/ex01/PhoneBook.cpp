@@ -12,6 +12,7 @@
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <sstream>
 
 PhoneBook::PhoneBook(void)
 {
@@ -63,10 +64,28 @@ void PhoneBook::add(void)
     this->_contacts[i].set_secret(str);
 }
 
+void PhoneBook::_print_element(std::string str, int amount) const
+{
+    if (str.length() <= 10)
+    {
+        for (int j = 0; j < 10 - str.length(); j++)
+            std::cout << " ";
+		std::cout << str;
+    }
+   else
+    {
+        for (int j = 0; j < 9; j++)
+            std::cout << str[j];
+       std::cout << ".";
+    }
+}
+
 void PhoneBook::search(void) const
 {
     int amount;
+	int id;
     std::string str;
+	std::stringstream ss;
 
     if (this->_amount < 0)
         return ;
@@ -78,19 +97,25 @@ void PhoneBook::search(void) const
     {
         std::cout << "         " << i << "|";
         str = this->_contacts[i].get_fname();
-        if (str.length() <= 10)
-        {
-            for (int j = 0; j < 10 - str.length(); j++)
-                std::cout << " ";
-        }
-        else
-        {
-            for (int j = 0; j < 9; j++)
-                std::cout << str[j];
-            std::cout << ".";
-        }
-        std::cout << str << "|";
+		this->_print_element(str, amount);
+		std::cout << "|";
+		str = this->_contacts[i].get_lname();
+		this->_print_element(str, amount);
+		std::cout << "|";
+		str = this->_contacts[i].get_nname();
+		this->_print_element(str, amount);
         std::cout << std::endl;
     }
-
+	do
+	{
+		std::cout << "Input desired contact index: ";
+		std::getline(std::cin, str);
+	} while (str.length() > 1 || (str[0] < '0' || str[0] > ('0' + amount)));
+	ss << str;
+	ss >> id;
+	std::cout << "First Name: " << this->_contacts[id].get_fname() <<std::endl;
+	std::cout << "Last Name: " << this->_contacts[id].get_lname() <<std::endl;
+	std::cout << "Nickname: " << this->_contacts[id].get_nname() <<std::endl;
+	std::cout << "Number: " << this->_contacts[id].get_number() <<std::endl;
+	std::cout << "Darkest secret: " << this->_contacts[id].get_secret() <<std::endl;
 }

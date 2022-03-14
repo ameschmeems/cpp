@@ -29,6 +29,8 @@ private:
 
     Contact _contacts[8];
     int _amount;
+
+    void _print_element(std::string str, int amount) const;
 };
 
 #endif
