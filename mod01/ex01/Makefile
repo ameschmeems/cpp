@@ -1,6 +1,8 @@
-NAME	:=	megaphone
+NAME	:=	zombie_horde
 
-SRCS	:=	megaphone.cpp
+SRCS	:=	Zombie.cpp \
+			main.cpp \
+			zombieHorde.cpp
 
 OBJS	:=	${SRCS:.cpp=.o}
 
@@ -21,4 +23,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re		
+.PHONY:		all clean fclean re
