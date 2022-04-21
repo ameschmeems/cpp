@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:10:51 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/20 20:22:44 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/21 14:15:04 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,19 @@ Fixed::~Fixed(void)
 
 Fixed &Fixed::operator=(Fixed &copy)
 {
-	this->setRawBits(copy.getRawBits());
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_fp_value = copy.getRawBits();
 	return (*this);
 }
 
 int Fixed::getRawBits(void) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fp_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
+	std::cout << "setRawBits member function called" << std::endl;
 	this->_fp_value = raw;
 }
