@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 15:44:29 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/03/16 16:45:12 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/23 15:38:27 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ public:
 	void set_name(std::string name);
 
 	void announce(void);
-	std::string _name;
 
 private:
+	std::string _name;
 
 	
 };
