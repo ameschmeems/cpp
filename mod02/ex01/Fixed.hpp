@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:05:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/25 17:03:10 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/25 17:19:38 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ public:
 	Fixed(const float i);
 	~Fixed(void);
 
-	Fixed &operator=(const Fixed &copy);
+	Fixed &operator=(const Fixed &f);
+
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 	float toFloat(void) const;
