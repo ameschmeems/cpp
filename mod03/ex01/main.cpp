@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:05:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 11:36:09 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/26 15:14:18 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/27 12:23:34 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#include <cstdlib>
+#include <iostream>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-# include <iostream>
-
-class Fixed
+int main( void )
 {
-public:
-
-	Fixed(void);
-	Fixed(const Fixed &copy);
-	~Fixed(void);
-
-	Fixed &operator=(const Fixed &f);
-
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-
-private:
-
-	int _fp_value;
-	const static int _bits = 8;
-};
-
-#endif
+	ClapTrap mobA("Frog");
+	ScavTrap mobB("Toad");
+	mobA.attack("A box");
+	mobB.attack("A wall");
+	mobB.guardGate();
+	return 0;
+}

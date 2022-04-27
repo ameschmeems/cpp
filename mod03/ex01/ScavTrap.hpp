@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:05:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 11:36:09 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/27 11:56:03 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/27 12:23:56 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
-# include <iostream>
+#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class ScavTrap : public ClapTrap
 {
 public:
 
-	Fixed(void);
-	Fixed(const Fixed &copy);
-	~Fixed(void);
+	ScavTrap(void);
+	ScavTrap(const ScavTrap &copy);
+	ScavTrap(const std::string name);
+	~ScavTrap(void);
 
-	Fixed &operator=(const Fixed &f);
+	ScavTrap &operator=(const ScavTrap &st);
 
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
-
-private:
-
-	int _fp_value;
-	const static int _bits = 8;
+	void guardGate(void);
 };
 
 #endif

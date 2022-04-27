@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:05:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 11:36:09 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/27 15:32:05 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/27 16:10:17 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef DIAMONDTRAP_H
+# define DIAMONDTRAP_H
 
-# include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class Fixed
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 public:
 
-	Fixed(void);
-	Fixed(const Fixed &copy);
-	~Fixed(void);
+	DiamondTrap(void);
+	DiamondTrap(const DiamondTrap &copy);
+	DiamondTrap(const std::string name);
+	~DiamondTrap(void);
 
-	Fixed &operator=(const Fixed &f);
+	DiamondTrap &operator=(const DiamondTrap &dt);
 
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
+	using ScavTrap::attack;
+	void whoAmI(void) const;
+	int getHitPoints(void) const;
+	int getEnergy(void) const;
 
 private:
 
-	int _fp_value;
-	const static int _bits = 8;
+	std::string _name;
 };
 
 #endif

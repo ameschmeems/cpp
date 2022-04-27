@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 15:05:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 11:36:09 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/26 15:14:25 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/27 12:05:43 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 
-# include <iostream>
+#include <iostream>
 
-class Fixed
+class ClapTrap
 {
 public:
 
-	Fixed(void);
-	Fixed(const Fixed &copy);
-	~Fixed(void);
+	ClapTrap(void);
+	ClapTrap(const ClapTrap &copy);
+	ClapTrap(const std::string name);
+	~ClapTrap(void);
 
-	Fixed &operator=(const Fixed &f);
+	ClapTrap &operator=(const ClapTrap &ct);
 
-	int getRawBits(void) const;
-	void setRawBits(int const raw);
+	void attack(const std::string &target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 
-private:
+protected:
 
-	int _fp_value;
-	const static int _bits = 8;
+	std::string _name;
+	int _hp;
+	int _energy;
+	int _damage;
 };
 
 #endif

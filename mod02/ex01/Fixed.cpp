@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:10:51 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/25 17:22:57 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/27 11:37:58 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const Fixed &copy)
 Fixed::Fixed(const int i)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fp_value = i << this->_bits;
+	this->_fp_value = (i << this->_bits);
 }
 
 Fixed::Fixed(const float i)
