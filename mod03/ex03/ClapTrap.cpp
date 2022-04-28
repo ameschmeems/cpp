@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 15:14:22 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 16:12:37 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/28 11:14:54 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ ClapTrap::~ClapTrap(void)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &ct)
 {
-	*this = ct;
+	this->_name = ct._name;
+	this->_hp = ct._hp;
+	this->_energy = ct._energy;
+	this->_damage = ct._damage;
 	return (*this);
 }
 

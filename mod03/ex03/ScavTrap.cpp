@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:56:01 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 15:56:14 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/28 11:16:03 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &st)
 {
-	*this = st;
+	this->_name = st._name;
+	this->_hp = st._hp;
+	this->_energy = st._energy;
+	this->_damage = st._damage;
 	return (*this);
 }
 

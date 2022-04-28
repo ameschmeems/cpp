@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 14:07:59 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 14:30:03 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/28 11:14:40 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ FragTrap::~FragTrap(void)
 
 FragTrap &FragTrap::operator=(const FragTrap &ft)
 {
-	*this = ft;
+	this->_name = ft._name;
+	this->_hp = ft._hp;
+	this->_energy = ft._energy;
+	this->_damage = ft._damage;
 	return (*this);
 }
 

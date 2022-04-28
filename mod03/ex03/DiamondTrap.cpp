@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:33:38 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/27 16:11:23 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/28 11:15:37 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,11 @@ DiamondTrap::~DiamondTrap(void)
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &dt)
 {
-	*this = dt;
+	this->ClapTrap::_name = dt.ClapTrap::_name;
+	this->_name = dt._name;
+	this->_hp = dt._hp;
+	this->_energy = dt._energy;
+	this->_damage = dt._damage;
 	return (*this);
 }
 
