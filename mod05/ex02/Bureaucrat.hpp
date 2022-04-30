@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:30:10 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/30 16:06:20 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/30 19:14:05 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	void incrementGrade(void);
 	void decrementGrade(void);
 	void signForm(Form &f);
+	void executeForm(const Form &f);
 
 	class GradeTooHighException : public std::exception
 	{
