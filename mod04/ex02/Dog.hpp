@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 11:52:45 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/28 18:30:59 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/28 12:04:52 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/28 20:17:40 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef DOG_H
+# define DOG_H
 
-#include <string>
 #include <iostream>
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Animal
+class Dog : public AAnimal
 {
 public:
 
-	Animal(void);
-	Animal(const Animal &copy);
-	virtual ~Animal(void);
+	Dog(void);
+	Dog(const Dog &copy);
+	~Dog(void);
 
-	Animal &operator=(const Animal &animal);
+	Dog &operator=(const Dog &dog);
 
-	virtual void makeSound(void) const;
-	std::string getType(void) const;
+	void makeSound(void) const;
+	std::string getIdea(int id);
+	void setIdea(int id, std::string idea);
 
-protected:
+private:
 
-	std::string _type;
+	Brain *_brain;
 };
 
 #endif

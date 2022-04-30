@@ -6,37 +6,38 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 12:31:11 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/28 13:31:23 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/04/28 20:16:02 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include <iostream>
 
-int main(void)
+int main()
 {
-	const Animal *meta = new Animal();
-	const Animal *doge = new Dog();
-	const Animal *cate = new Cat();
-	std::cout << doge->getType() << std::endl;
-	std::cout << cate->getType() << std::endl;
-	cate->makeSound(); //will output the cat sound!
-	doge->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete doge;
-	delete cate;
-	const WrongAnimal *meta2 = new WrongAnimal();
-	const WrongAnimal *cate2 = new WrongCat();
-	std::cout << meta2->getType() << std::endl;
-	std::cout << cate2->getType() << std::endl;
-	meta2->makeSound();
-	cate2->makeSound();
-	delete meta2;
-	delete cate2;
-	return 0;
+	Cat basic;
+	Cat tmp = basic;
+	int size = 4;
+	Animal *tab[size];
+	int i = 0;
+
+	while (i < (size / 2))
+	{
+		tab[i] = new Dog();
+		i++;
+	}
+	while (i < size)
+	{
+		tab[i] = new Cat();
+		i++;
+	}
+	((Dog *)tab[0])->setIdea(0, "burger");
+	*((Dog *)tab[1]) = *((Dog *)tab[0]);
+	((Dog *)tab[0])->setIdea(0, "frog");
+	std::cout << "idea of 0 is " << ((Dog *)tab[0])->getIdea(0) << std::endl;
+	std::cout << "idea of 1 is " << ((Dog *)tab[1])->getIdea(0) << std::endl;
+	while (--i >= 0)
+		delete tab[i];
 }

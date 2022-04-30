@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 11:52:45 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/04/28 18:30:59 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/04/28 12:31:11 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/04/28 20:19:09 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
-
-#include <string>
+#include "AAnimal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 #include <iostream>
 
-class Animal
+int main()
 {
-public:
-
-	Animal(void);
-	Animal(const Animal &copy);
-	virtual ~Animal(void);
-
-	Animal &operator=(const Animal &animal);
-
-	virtual void makeSound(void) const;
-	std::string getType(void) const;
-
-protected:
-
-	std::string _type;
-};
-
-#endif
+	// Animal *animal = new Dog();
+	Dog *dog = new Dog();
+	delete dog;
+	return (0);
+}
