@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 17:54:12 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/05/03 19:15:03 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/05/03 19:56:09 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ public:
 
 	class OutOfBoundsExcept : std::exception
 	{
+	public:
+
 		virtual const char *what() const throw();
 	};
 

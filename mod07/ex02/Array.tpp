@@ -6,7 +6,7 @@
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:00:53 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/05/03 19:26:02 by kpucylo          ###   ########.fr       */
+/*   Updated: 2022/05/04 12:14:51 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ Array<T>::Array(const Array<T> &copy) : _size(copy._size), _arr(nullptr)
 template<typename T>
 Array<T>::~Array(void)
 {
-	delete [] this->_arr;
+	if (this->_arr)
+		delete [] this->_arr;
 }
 
 template<typename T>

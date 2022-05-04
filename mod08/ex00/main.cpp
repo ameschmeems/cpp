@@ -5,34 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpucylo <kpucylo@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 17:21:50 by kpucylo           #+#    #+#             */
-/*   Updated: 2022/05/04 12:19:27 by kpucylo          ###   ########.fr       */
+/*   Created: 2022/05/04 15:11:13 by kpucylo           #+#    #+#             */
+/*   Updated: 2022/05/04 18:30:31 by kpucylo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "easyfind.hpp"
 #include <iostream>
-#include "Array.hpp"
+
+const char *NotFoundExcept::what() const throw()
+{
+	return ("Element not found");
+}
 
 int main(void)
 {
-	Array<int> a(3);
+	std::vector<int> nums;
+	nums.push_back(1);
+	nums.push_back(2);
+	nums.push_back(3);
+	nums.push_back(4);
+	std::vector<int>::iterator i = easyfind(nums, 4);
+	std::cout << *i << std::endl;
 	try
 	{
-		int i = a[4];
+		std::vector<int>::iterator it = easyfind(nums, 5);
+		std::cout << *it << std::endl;
 	}
-	catch(const Array<int>::OutOfBoundsExcept& e)
+	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	a[1] = 2;
-	std::cout << a[1] << std::endl;
-	Array<int>b(a);
-	a[1] = 3;
-	std::cout << a[1] << std::endl;
-	std::cout << b[1] << std::endl;
-	std::cout << "Size of a: " << a.size() << std::endl;
-	std::cout << "Size of b: " << b.size() << std::endl;
-	Array<int> c = b;
-	std::cout << c[1] << std::endl;
-	std::cout << "Size of c: " << c.size() << std::endl;
+	
+	return (0);
 }
